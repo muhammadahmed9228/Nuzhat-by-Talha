@@ -57,8 +57,7 @@ export const sendOrderStatusEmail = async (order) => {
 };
 
 export const sendPasswordResetEmail = async (email, resetToken) => {
-    // Assuming frontend runs on VITE_API_BASE_URL origin, replace in production
-    const resetUrl = `${process.env.CORS_ORIGIN}/reset-password/${resetToken}`;
+    const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
     await sendEmail({
         to: email,
         subject: "Password Reset Request",
